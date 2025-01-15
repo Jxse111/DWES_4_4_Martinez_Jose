@@ -1,4 +1,6 @@
 <?php
+$mensajeError = "Mensajes de error : ";
+$mensajeExito = "Mensajes de éxito: ";
 $tiempo = time();
 // Guardamos la fecha actual de la sesión con hora, minutos y segundos también incluidos.
 $fechaUltimaConexion = date('Y-m-d H:i:s', $tiempo);
@@ -48,8 +50,7 @@ if (filter_has_var(INPUT_POST, "Registrarse")) {
 
             // Creación de la conexión
             $conexionBD = new mysqli();
-            $mensajeError = "";
-            $mensajeExito = "";
+
             //Intento de conexión a la base de datos
             try {
                 $conexionBD->connect("localhost", "root", "", "espectaculos");
@@ -96,7 +97,7 @@ if (filter_has_var(INPUT_POST, "Registrarse")) {
                         }
                         ?></li>
                 </ul>
-                <h2>Mensajes de exito: </h2>
+                <h2>Mensajes de éxito: </h2>
                 <ul>
                     <li><?php
                         if (isset($mensajeExito)) {
