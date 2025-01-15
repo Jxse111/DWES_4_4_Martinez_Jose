@@ -24,7 +24,7 @@ if (filter_has_var(INPUT_COOKIE, "usuario")) {
     }
     //Sino esta creada la cookie, se crea y se guardan los datos correspondientes.
 } else {
-    setcookie("usuario['nombre']", filter_input(INPUT_POST, "usuarioExistente"), time() + 604800);
+    setcookie("usuario['nombre']", $usuarioLogin, time() + 604800);
     setcookie("usuario['nVisitas']", '0', time() + 604800);
     setcookie("usuario['fConn']", $fechaUltimaConexion, time() + 604800);
 }
