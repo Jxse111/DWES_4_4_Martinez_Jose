@@ -7,8 +7,8 @@ $fechaUltimaConexion = date('Y-m-d H:i:s', $tiempo);
 if (filter_has_var(INPUT_COOKIE, "usuario")) {
     $contadorVisitas = intval(filter_input(INPUT_COOKIE, "usuario[nVisitas]"));
     //Una vez creada la cookie recojo los datos y actualizo el contador de visitas y la fecha de la ultima conexión.
-    foreach ($_COOKIE["usuario"] as $clave => $cookieUsuario) {
-        $datosCookieUsuario[$clave] = $cookieUsuario;
+    foreach ($_COOKIE["usuario"] as $claveCookieUsuario => $valorCookieUsuario) {
+        $datosCookieUsuario[$claveCookieUsuario] = $valorCookieUsuario;
     }
     setcookie("usuario[nVisitas]", $contadorVisitas + 1, time() + 604800);
     setcookie("usuario[fConn]", $fechaUltimaConexion, time() + 604800);
