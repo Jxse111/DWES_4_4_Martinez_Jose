@@ -5,28 +5,28 @@ $tiempo = time();
 // Guardamos la fecha actual de la sesión con hora, minutos y segundos también incluidos.
 $fechaUltimaConexion = date('Y-m-d H:i:s', $tiempo);
 if (filter_has_var(INPUT_COOKIE, "usuario")) {
-    $contadorVisitas = intval(filter_input(INPUT_COOKIE, "usuario['nVisitas']"));
+    $contadorVisitas = intval(filter_input(INPUT_COOKIE, "usuario[nVisitas]"));
     //Una vez creada la cookie recojo los datos y actualizo el contador de visitas y la fecha de la ultima conexión.
     foreach ($_COOKIE["usuario"] as $clave => $cookieUsuario) {
         $datosCookieUsuario[$clave] = $cookieUsuario;
     }
-    setcookie("usuario['nVisitas']", $contadorVisitas + 1, time() + 604800);
-    setcookie("usuario['fConn']", $fechaUltimaConexion, time() + 604800);
+    setcookie("usuario[nVisitas]", $contadorVisitas + 1, time() + 604800);
+    setcookie("usuario[fConn]", $fechaUltimaConexion, time() + 604800);
 
     if (filter_has_var(INPUT_POST, "reiniciarVisitas")) {
-        setcookie("usuario['nVisitas']", '0', time() + 604800);
+        setcookie("usuario[nVisitas]", '0', time() + 604800);
     } elseif (filter_has_var(INPUT_POST, "eliminarCookie")) {
-        setcookie("usuario['nombre']", "", time() - 604800);
-        setcookie("usuario['nVisitas']", "", time() - 604800);
-        setcookie("usuario['fConn']", "", time() - 604800);
+        setcookie("usuario[nombre]", "", time() - 604800);
+        setcookie("usuario[nVisitas]", "", time() - 604800);
+        setcookie("usuario[fConn]", "", time() - 604800);
         header("Location: login.html"); // Realizamos la redirección al formulario de inicio de sesión
         exit(); // Aseguramos que no siga ejecutando código después de la redirección
     }
     //Sino esta creada la cookie, se crea y se guardan los datos correspondientes.
 } else {
-    setcookie("usuario['nombre']", $usuarioLogin, time() + 604800);
-    setcookie("usuario['nVisitas']", '0', time() + 604800);
-    setcookie("usuario['fConn']", $fechaUltimaConexion, time() + 604800);
+    setcookie("usuario[nombre]", filter_input(INPUT_POST, "usuarioExistente"), time() + 604800);
+    setcookie("usuario[nVisitas]", '0', time() + 604800);
+    setcookie("usuario[fConn]", $fechaUltimaConexion, time() + 604800);
 }
 ?>
 <?php
