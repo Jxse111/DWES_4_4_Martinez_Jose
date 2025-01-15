@@ -10,6 +10,22 @@ if (filter_has_var(INPUT_COOKIE, "usuario")) {
     foreach ($_COOKIE["usuario"] as $claveCookieUsuario => $valorCookieUsuario) {
         $datosCookieUsuario[$claveCookieUsuario] = $valorCookieUsuario;
     }
+
+    //Si queremos recoger los valores de la cookie para usarlos posteriormente debemos hacer lo siguiente:
+    /* foreach ($_COOKIE["usuario"] as $claveCookieUsuario => $valorCookieUsuario) {
+     * switch($claveCookieUsuario){
+     * case "nombre" : 
+     *      $nombreUsuario = $valorCookieUsuario;
+     * break;
+     * case "nVisitas" : 
+     *      $numeroVisitas = $valorCookieUsuario;
+     * break;
+     * case "fConn":
+     *      $fechaUltimaConexion = $valorCookieUsuario;
+     * break;
+     * }
+      } */
+
     setcookie("usuario[nVisitas]", $contadorVisitas + 1, time() + 604800);
     setcookie("usuario[fConn]", $fechaUltimaConexion, time() + 604800);
 
@@ -30,7 +46,7 @@ if (filter_has_var(INPUT_COOKIE, "usuario")) {
 }
 ?>
 <?php
-/* En el caso de que se pulse el boton Crear cuenta del formulario de inicio de sesión
+/* En el caso de que se pulse el boton Crear cuenta del formulario de inicio de sesión,
  *  serás redirigido al formulario de registro
  */
 if (filter_has_var(INPUT_POST, "Registrarse")) {
