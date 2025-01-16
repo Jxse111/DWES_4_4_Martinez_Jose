@@ -1,4 +1,4 @@
-<em align="center"> AISLAMIENTO DEL FORMULARIO DEL PHP PRINCIPAL Y COOKIES V2 </em>
+<em> AISLAMIENTO DEL FORMULARIO DEL PHP PRINCIPAL Y COOKIES V2 </em>
 <h4 align="center">
 Crear una conexión al formulario y crear una cookie que contenga un array que almacene el usuario registrado, las visitas y la fecha de la ultima conexión.
 </h4>
