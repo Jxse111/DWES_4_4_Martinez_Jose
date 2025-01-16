@@ -12,7 +12,7 @@ Crear una conexión al formulario y crear una cookie que contenga un array que a
 
 - \## 📁 Acceso al proyecto
 
-Descargar carpeta del proyecto y ejecutar los dos .html ya sea el de registro o el de inicio de sesión (ya que están interconectados).
+Descargar carpeta del proyecto y descomprime dicha carpeta.
 
 \## 🛠️ Abre y ejecuta el proyecto
 
