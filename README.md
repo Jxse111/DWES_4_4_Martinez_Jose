@@ -18,7 +18,7 @@ Descargar carpeta del proyecto y ejecutar los dos .html ya sea el de registro o 
 
 Una vez descargada la carpeta,activar xampp tanto servidor de apache como mysql, acceder con netbeans o directamente en la carpeta clickar en .html(login o registro) e introducir un usuario y contraseña de ejemplo que este almacenado en la base de datos.
 
-<h4 align="center">
+<h4>
   ✅TECNOLOGÍAS UTILIZADAS:
 </h4>
 <hr>
